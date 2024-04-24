@@ -1,0 +1,6 @@
+name: My GitHub Action
+description: A brief description of what this action does
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
