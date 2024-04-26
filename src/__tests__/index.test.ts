@@ -1,29 +1,31 @@
 import { getInput } from '@actions/core';
-import { mocked } from 'ts-jest/utils';
+import { mocked } from 'jest-mock';
 
 jest.mock('@actions/core');
 
 describe('index.ts', () => {
-  let mockedGetInput: jest.MockedFunction<typeof getInput>;
+	let mockedGetInput: jest.MockedFunction<typeof getInput>;
 
-  beforeEach(() => {
-    mockedGetInput = mocked(getInput, true);
-  });
+	beforeEach(() => {
+		mockedGetInput = mocked(getInput, { shallow: true });
+	});
 
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
+	afterEach(() => {
+		jest.clearAllMocks();
+	});
 
-  it('should get the input "name"', () => {
-    // Arrange
-    const inputName = 'John Doe';
-    mockedGetInput.mockReturnValue(inputName);
+	it('should get the input "name"', async () => {
+		// Arrange
+		const inputName = 'John Doe';
+		mockedGetInput.mockReturnValue(inputName);
 
-    // Act
-    const name = getInput("name");
+		// Act
+		const name = getInput("name");
 
-    // Assert
-    expect(mockedGetInput).toHaveBeenCalledWith('name');
-    expect(name).toBe(inputName);
-  });
+		// Assert
+		expect(mockedGetInput).toHaveBeenCalledWith('name');
+		expect(name).toBe(inputName);
+	});
+
+
 });
