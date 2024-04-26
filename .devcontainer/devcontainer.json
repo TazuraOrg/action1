@@ -7,6 +7,8 @@
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/vercel-ncc:1": {},
 		"ghcr.io/devcontainers/features/github-cli":  {}
+		"ghcr.io/devcontainers/features/docker-outside-of-docker": {},
+		"ghcr.io/dhoeric/features/act": {}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
