@@ -9,6 +9,16 @@
 		"ghcr.io/devcontainers/features/github-cli":  {}
 		"ghcr.io/devcontainers/features/docker-outside-of-docker": {},
 		"ghcr.io/dhoeric/features/act": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.vscode-github-actions",
+				"GitHub.vscode-pull-request-github",
+				"GitHub.copilot",
+				"GitHub.copilot-chat"
+			]
+		}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
