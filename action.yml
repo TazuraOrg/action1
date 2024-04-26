@@ -1,6 +1,11 @@
 name: My GitHub Action
 description: A brief description of what this action does
 
+inputs:
+  name:
+    description: 'The name to say hello to'
+    required: true
+    default: 'World'
 runs:
   using: 'node20'
   main: 'dist/index.js'

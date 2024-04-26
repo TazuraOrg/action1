@@ -2,6 +2,11 @@ name: "Hello"
 
 on:
   workflow_dispatch:
+    inputs:
+      name:
+        description: "Who to say hello to"
+        required: true
+        default: "World"
 
 jobs:
   hello:
@@ -9,3 +14,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./
+        with:
+          name: ${{ inputs.name }}
