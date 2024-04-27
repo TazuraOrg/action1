@@ -1,11 +1,19 @@
-name: My GitHub Action
-description: A brief description of what this action does
+name: "Label new pull requests"
+description: "Add a label when a new PR is opened."
+author: "Leonardo Montini"
 
 inputs:
-  name:
-    description: 'The name to say hello to'
+  gh-token:
+    description: 'The GitHub token for authentication.'
     required: true
-    default: 'World'
+  label:
+    description: 'The label to be applied to the pull request.'
+    required: true
+
 runs:
-  using: 'node20'
-  main: 'dist/index.js'
+  using: "node20"
+  main: "dist/index.js"
+
+branding:
+  icon: 'activity'
+  color: 'green'
